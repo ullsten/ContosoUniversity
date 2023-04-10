@@ -12,9 +12,9 @@ namespace ContosoUniversity.Views.Students
 {
     public class DeleteModel : PageModel
     {
-        private readonly ContosoUniversity.SchoolContext _context;
+        private readonly ContosoUniversity.Data.SchoolContext _context;
 
-        public DeleteModel(ContosoUniversity.SchoolContext context)
+        public DeleteModel(ContosoUniversity.Data.SchoolContext context)
         {
             _context = context;
         }
@@ -24,7 +24,7 @@ namespace ContosoUniversity.Views.Students
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Student == null)
+            if (id == null || _context.Students == null)
             {
                 return NotFound();
             }
@@ -44,7 +44,7 @@ namespace ContosoUniversity.Views.Students
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (id == null || _context.Student == null)
+            if (id == null || _context.Students == null)
             {
                 return NotFound();
             }

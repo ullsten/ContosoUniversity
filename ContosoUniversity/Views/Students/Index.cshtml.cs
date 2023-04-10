@@ -12,9 +12,9 @@ namespace ContosoUniversity.Views.Students
 {
     public class IndexModel : PageModel
     {
-        private readonly ContosoUniversity.SchoolContext _context;
+        private readonly ContosoUniversity.Data.SchoolContext _context;
 
-        public IndexModel(ContosoUniversity.SchoolContext context)
+        public IndexModel(ContosoUniversity.Data.SchoolContext context)
         {
             _context = context;
         }
@@ -23,7 +23,7 @@ namespace ContosoUniversity.Views.Students
 
         public async Task OnGetAsync()
         {
-            if (_context.Student != null)
+            if (_context.Students != null)
             {
                 Student = await _context.Students.ToListAsync();
             }
